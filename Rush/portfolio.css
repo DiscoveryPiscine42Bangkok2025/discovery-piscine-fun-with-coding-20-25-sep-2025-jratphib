@@ -1,0 +1,228 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --main-accent-tranphakorn: #007bff; /* สีฟ้า */
+    --main-accent-jiraphat: #9c27b0; /* สีม่วง */
+    --main-dark: #121212; /* สีดำสนิท */
+    --main-light: #f5f5f5; /* สีเทาอ่อน */
+    --main-grey: #333333; /* สีเทาเข้ม */
+    --heading-font: 'Bebas Neue', sans-serif;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+/* Default Colors (for profile selection screen) */
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--main-dark);
+    color: var(--main-light);
+    overflow: hidden;
+}
+
+/* --- Tranphakorn's Theme --- */
+.tranphakorn-theme .navbar {
+    background: var(--main-accent-tranphakorn);
+}
+
+.tranphakorn-theme .section h2, .tranphakorn-theme .photo-square, .tranphakorn-theme .socials a {
+    color: var(--main-accent-tranphakorn);
+    border-color: var(--main-accent-tranphakorn);
+}
+
+.tranphakorn-theme .skill-list li {
+    background: var(--main-accent-tranphakorn);
+}
+
+/* --- Jiraphat's Theme --- */
+.jiraphat-theme .navbar {
+    background: var(--main-accent-jiraphat);
+}
+
+.jiraphat-theme .section h2, .jiraphat-theme .photo-square, .jiraphat-theme .socials a {
+    color: var(--main-accent-jiraphat);
+    border-color: var(--main-accent-jiraphat);
+}
+
+.jiraphat-theme .skill-list li {
+    background: var(--main-accent-jiraphat);
+}
+
+/* Reset & Global */
+.screen {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.active-screen {
+    display: flex !important;
+    opacity: 1;
+}
+
+/* --- Profile Select --- */
+.start-screen {
+    background: var(--main-grey);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-title {
+    font-size: 5rem;
+    font-family: var(--heading-font);
+    font-weight: 400;
+    margin-bottom: 4rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px var(--main-dark);
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-choice {
+    text-align: center;
+    margin: 0 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: #222;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.profile-choice img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    object-fit: cover;
+}
+
+.profile-choice:hover {
+    transform: translateY(-15px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.profile-choice:hover img {
+    border-color: var(--main-accent-tranphakorn); /* ใช้สีเริ่มต้นสำหรับหน้าเลือกโปรไฟล์ */
+}
+
+.profile-name {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--main-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Portfolio --- */
+.portfolio-screen {
+    background: var(--main-light);
+    color: var(--main-dark);
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--main-accent-tranphakorn); /* เปลี่ยนสีนี้ในแต่ละหน้า */
+    display: flex;
+    justify-content: center;
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: #fff;
+    padding: 20px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--heading-font);
+}
+
+.navbar a:hover {
+    background: var(--main-dark);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.page-wrapper {
+    max-width: 960px;
+    margin: auto;
+    padding-top: 100px;
+    width: 90%;
+}
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.section h2 {
+    font-family: var(--heading-font);
+    color: var(--main-accent-tranphakorn); /* เปลี่ยนสีนี้ในแต่ละหน้า */
+    font-size: 3rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        2px 2px 0 #555,
+        4px 4px 0 #333,
+        6px 6px 0 #222;
+}
+
+.photo-square {
+    max-width: 300px;
+    border-radius: 8px;
+    border: 8px solid var(--main-accent-tranphakorn); /* เปลี่ยนสีนี้ในแต่ละหน้า */
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-list li {
+    background: var(--main-accent-tranphakorn); /* เปลี่ยนสีนี้ในแต่ละหน้า */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.socials a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--main-accent-tranphakorn); /* เปลี่ยนสีนี้ในแต่ละหน้า */
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: var(--main-dark);
+}
+
+.about-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
